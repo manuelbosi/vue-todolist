@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <title>Vue Js - Todo List</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="app">
 
-    <input v-model="todo" type="text">
+    <img src="img/logo.png" alt="logo">
+
+    <input v-model="todo" type="text" placeholder="Nuova Todo">
     <button @click="addTodo">AGGIUNGI</button>
+
     <ul>
-      <li v-for="(task, index) in taskList">{{index}} - {{task}} <span @click="deleteTodo(task)">X</span></li>
+      <li v-for="(task, index) in taskList">{{task}}<i class="fas fa-trash-alt" @click="deleteTodo(task)"></i></li>
     </ul>
 
   </div>

@@ -7,7 +7,7 @@ const app = new Vue({
   el: "#app",
   data: {
     taskList: [],
-    todo: null,
+    todo: "",
   },
   methods: {
     
