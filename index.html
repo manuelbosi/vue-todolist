@@ -8,9 +8,12 @@
 </head>
 <body>
   <div id="app">
-    
 
-    
+    <input v-model="todo" type="text">
+    <button @click="addTodo">AGGIUNGI</button>
+    <ul>
+      <li v-for="task in taskList"> {{task}} <span>X</span></li>
+    </ul>
 
   </div>
   <script src="js/app.js"></script>

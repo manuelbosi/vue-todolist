@@ -6,9 +6,22 @@
 const app = new Vue({
   el: "#app",
   data: {
-
+    taskList: [],
+    todo: null
   },
   methods: {
+    addTodo(){ // funzione per aggiungere task
+      console.log("TASK DA AGGIUNGERE", this.todo) // debug: vedo se il valore che mi stampa è quello dell'input
+      this.taskList.push(this.todo) // pusho il valore inserito nell'array
+      console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
 
+    }
   } 
-})
+});
+
+
+
+// STRUTTURA DEI DATI
+// un array inizializzato vuoto che contiene tutte le task aggiunte - OK
+// una funzione sul bottone aggiungi che pusha il valore dell'input dentro l'array - OK
+// una serie di li generati dinamicamente con un v-for che stampa ogni valore dell'array - OK
