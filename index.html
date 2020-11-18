@@ -16,6 +16,7 @@
     <button @click="addTodo">AGGIUNGI</button>
 
     <ul>
+      <h3>ELENCO TODO</h3>
       <li v-for="(task, index) in taskList">{{task}}<i class="fas fa-trash-alt" @click="deleteTodo(task)"></i></li>
     </ul>
 

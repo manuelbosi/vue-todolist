@@ -27,6 +27,7 @@
   margin-right: 10px;
   border: 0;
   border-bottom: 1px solid black;
+  outline: none;
 }
 #app button {
   border-radius: 10px;
@@ -37,6 +38,9 @@
   background-color: #f5f7f7;
   padding: 30px;
   border-radius: 10px;
+}
+#app ul h3{
+  margin-bottom: 20px;
 }
 #app ul li {
   display: flex;
