@@ -14,15 +14,10 @@ const app = new Vue({
     // FUNZIONE PER AGGIUNGERE TASK
     addTodo(){
 
-      // Check task già presente
-      if (!this.taskList.includes(this.todo)) {
-        console.log("TASK DA AGGIUNGERE", this.todo) // debug: vedo se il valore che mi stampa è quello dell'input
-        this.taskList.push(this.todo.toUpperCase()) // pusho il valore inserito nell'array
-        console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
-        this.todo = ""; // ripulisco l'input  
-      } else {
-        alert("TODO GIA' INSERITA")
-      }
+      console.log("TASK DA AGGIUNGERE", this.todo) // debug: vedo se il valore che mi stampa è quello dell'input
+      this.taskList.push(this.todo.toUpperCase()) // pusho il valore inserito nell'array
+      console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
+      this.todo = ""; // ripulisco l'input  
 
     },
 
