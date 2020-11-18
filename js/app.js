@@ -7,20 +7,23 @@ const app = new Vue({
   el: "#app",
   data: {
     taskList: [],
-    todo: null
+    todo: null,
   },
   methods: {
     
-    // funzione per aggiungere task
+    // FUNZIONE PER AGGIUNGERE TASK
     addTodo(){
       console.log("TASK DA AGGIUNGERE", this.todo) // debug: vedo se il valore che mi stampa è quello dell'input
-      this.taskList.push(this.todo) // pusho il valore inserito nell'array
+      this.taskList.push(this.todo.toUpperCase()) // pusho il valore inserito nell'array
       console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
+      this.todo = ""; // ripulisco l'input
     },
 
-    // funzione per eliminare task
-    deleteTodo(){
-      console.log("clicked");
+    // FUNZIONE PER ELIMINARE TASK
+    deleteTodo(i){
+      let todoIndex = this.taskList.indexOf(i); // salvo in una variabile indice dell'argomento (task)
+      this.taskList.splice(todoIndex, 1); // rimuovo il task passato come parametro nell'attributo @click html
+      console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
     }
 
 
