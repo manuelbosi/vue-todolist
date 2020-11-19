@@ -39,8 +39,13 @@
   padding: 30px 5px;
   border-radius: 10px;
 }
-#app ul h3{
+#app ul h2{
   margin-bottom: 20px;
+}
+#app ul h4{
+  letter-spacing: 8px;
+  margin: 10px 0;
+  text-transform: uppercase;
 }
 #app ul li {
   display: flex;
