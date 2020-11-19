@@ -15,11 +15,20 @@
     <input v-model="todo" @keyup.enter="addTodo" type="text" placeholder="Nuova Todo">
     <button @click="addTodo">AGGIUNGI</button>
 
-    <ul>
-      <h2>ELENCO TODO</h2>
-      <h4 v-if="taskList.length === 0">Oggi sei libero</h4>
-      <li v-for="(task, index) in taskList">{{task}}<i class="fas fa-trash-alt" @click="deleteTodo(task)"></i></li>
-    </ul>
+    <div id="container">
+      <ul>
+        <h2>ELENCO TODO</h2>
+        <h4 v-if="taskList.length === 0">Oggi sei libero</h4>
+        <li v-for="task in taskList">{{task}}<i class="fas fa-trash-alt" @click="deleteTodo(task)"></i></li>
+      </ul>
+
+      <ul id="task-list-ok">
+        <h2>ELENCO TODO COMPLETATE</h2>
+        <h4 v-if="taskListOk.length === 0">FAI QUALCOSA</h4>
+        <li v-for="taskOk in taskListOk">{{taskOk}}</li>
+      </ul>
+
+    </div>
 
   </div>
   <script src="js/app.js"></script>

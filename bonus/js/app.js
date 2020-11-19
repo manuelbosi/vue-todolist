@@ -8,16 +8,18 @@ const app = new Vue({
   data: {
     taskList: [],
     todo: "",
+    taskListOk: []
   },
   methods: {
     
     // FUNZIONE PER AGGIUNGERE TASK
     addTodo(){
+      let upperCaseInput = this.todo.toUpperCase() // converto il valore in maiuscolo
 
       // Check task già inserita e vuota
-      if (!this.taskList.includes(this.todo) && (this.todo !== "")) {
+      if (!this.taskList.includes(upperCaseInput) && (upperCaseInput !== "")) {
         console.log("TASK DA AGGIUNGERE", this.todo) // debug: vedo se il valore che mi stampa è quello dell'input
-        this.taskList.push(this.todo.toUpperCase()) // pusho il valore inserito nell'array
+        this.taskList.push(upperCaseInput) // pusho il valore inserito nell'array
         console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
         this.todo = ""; // ripulisco l'input  
       } else {
@@ -30,9 +32,8 @@ const app = new Vue({
       let todoIndex = this.taskList.indexOf(i); // salvo in una variabile indice dell'argomento (task)
       this.taskList.splice(todoIndex, 1); // rimuovo il task passato come parametro nell'attributo @click html
       console.log("ARRAY", this.taskList) // debug: vedo se il valore è stato inserito correttamente
+      this.taskListOk.push(i);
     }
-
-
   } 
 });
 
